@@ -1,1 +1,168 @@
 <ht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ml>
+
+pip install requests flask
+
+python app.py
+http://127.0.0.1:5001/dora_metrics
+
+http://127.0.0.1:5001/dora_metrics
+
+"
+import requests
+from datetime import datetime, timedelta
+from flask import Flask, jsonify
+
+# GitHub repository and personal access token (PAT) setup
+OWNER = "nammayatri"
+REPO = "nammayatri"
+GITHUB_API_URL = f"https://api.github.com/repos/{OWNER}/{REPO}"
+TOKEN = ""  # Replace with your PAT
+
+HEADERS = {
+    "Authorization": f"token {TOKEN}",
+    "Accept": "application/vnd.github.v3+json"
+}
+
+# Flask application setup
+app = Flask(__name__)
+
+# Function to fetch commit data from GitHub
+def get_commit_data():
+    url = f"{GITHUB_API_URL}/commits"
+    commits = []
+    
+    # Send GET request to GitHub API
+    response = requests.get(url, headers=HEADERS)
+    print("Commit response:", response.json())  # Add this line to print the commit data
+    
+    if response.status_code == 200:
+        data = response.json()
+        
+        # Extract relevant commit details
+        for commit in data:
+            commit_info = {
+                "commit_id": commit["sha"],
+                "timestamp": commit["commit"]["author"]["date"],  # Commit timestamp
+                "author": commit["commit"]["author"]["name"],     # Commit author
+                "message": commit["commit"]["message"],            # Commit message
+            }
+            commits.append(commit_info)
+        
+        return commits
+    else:
+        print(f"Error: Unable to fetch commits. Status code {response.status_code}")
+        return []
+
+# Function to fetch deployment data from GitHub
+def get_deployment_data():
+    url = f"{GITHUB_API_URL}/deployments"
+    deployments = []
+    
+    # Send GET request to GitHub API
+    response = requests.get(url, headers=HEADERS)
+    print("Deployment response:", response.json())  # Add this line to print the deployment data
+    
+    if response.status_code == 200:
+        data = response.json()
+        
+        # Extract relevant deployment details
+        for deployment in data:
+            print(f"Deployment {deployment['id']} status: {deployment['status']}")  # Add this line to debug status
+            deployment_info = {
+                "deployment_id": deployment["id"],
+                "timestamp": deployment["created_at"],  # Deployment timestamp
+                "status": deployment["status"],          # Deployment status
+                "environment": deployment["environment"],  # Deployment environment (e.g., production, staging)
+            }
+            deployments.append(deployment_info)
+        
+        return deployments
+    else:
+        print(f"Error: Unable to fetch deployments. Status code {response.status_code}")
+        return []
+
+# Function to calculate Deployment Frequency (DF)
+def calculate_deployment_frequency(deployments):
+    # Define the time window (e.g., the last week)
+    one_week_ago = datetime.utcnow() - timedelta(weeks=1)
+    
+    # Filter deployments that happened in the past week
+    recent_deployments = [d for d in deployments if datetime.strptime(d["timestamp"], "%Y-%m-%dT%H:%M:%SZ") > one_week_ago]
+    
+    return len(recent_deployments)
+
+# Function to calculate Lead Time for Changes (LT)
+def calculate_lead_time_for_changes(commits, deployments):
+    lead_times = []
+    
+    # Calculate lead time for each deployment (time from commit to deployment)
+    for deployment in deployments:
+        deploy_time = datetime.strptime(deployment["timestamp"], "%Y-%m-%dT%H:%M:%SZ")
+        
+        # Find the corresponding commit (for simplicity, assume the first commit)
+        corresponding_commit = next((commit for commit in commits if datetime.strptime(commit["timestamp"], "%Y-%m-%dT%H:%M:%SZ") < deploy_time), None)
+        
+        if corresponding_commit:
+            commit_time = datetime.strptime(corresponding_commit["timestamp"], "%Y-%m-%dT%H:%M:%SZ")
+            lead_time = (deploy_time - commit_time).total_seconds() / 3600  # in hours
+            lead_times.append(lead_time)
+        else:
+            print(f"No corresponding commit for deployment: {deployment['deployment_id']}")
+
+    if lead_times:
+        return sum(lead_times) / len(lead_times)  # Return average Lead Time in hours
+    return 0
+
+# Function to calculate Change Failure Rate (CFR)
+def calculate_change_failure_rate(deployments):
+    total_deployments = len(deployments)
+    failed_deployments = len([d for d in deployments if d["status"] == "failure"])
+    
+    if total_deployments == 0:
+        return 0
+    return (failed_deployments / total_deployments) * 100
+
+# Function to calculate Mean Time to Restore (MTTR)
+def calculate_mttr():
+    # In a real scenario, you would fetch incidents from a monitoring tool (Sentry, Datadog, etc.)
+    # For the sake of simplicity, let's mock the incidents
+    incidents = [
+        {"incident_id": 1, "start_time": "2025-01-01T16:00:00Z", "end_time": "2025-01-01T17:00:00Z"},
+        {"incident_id": 2, "start_time": "2025-01-02T08:00:00Z", "end_time": "2025-01-02T09:00:00Z"},
+    ]
+    
+    restoration_times = []
+    
+    for incident in incidents:
+        start_time = datetime.strptime(incident["start_time"], "%Y-%m-%dT%H:%M:%SZ")
+        end_time = datetime.strptime(incident["end_time"], "%Y-%m-%dT%H:%M:%SZ")
+        restoration_times.append((end_time - start_time).total_seconds() / 3600)  # in hours
+    
+    if restoration_times:
+        return sum(restoration_times) / len(restoration_times)  # Return average MTTR in hours
+    return 0
+
+@app.route('/dora_metrics', methods=['GET'])
+def get_dora_metrics():
+    # Fetch data
+    commits = get_commit_data()
+    deployments = get_deployment_data()
+    
+    # Calculate DORA metrics
+    df = calculate_deployment_frequency(deployments)
+    lt = calculate_lead_time_for_changes(commits, deployments)
+    cfr = calculate_change_failure_rate(deployments)
+    mttr = calculate_mttr()
+    
+    # Return the metrics as a JSON response
+    return jsonify({
+        "deployment_frequency": df,
+        "lead_time_for_changes": lt,
+        "change_failure_rate": cfr,
+        "mean_time_to_restore": mttr
+    })
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)  # Change the port here
+
+"
