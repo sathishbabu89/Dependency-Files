@@ -307,3 +307,63 @@ Introducing gamified savings challenges in a mobile banking app can offer signif
 Overall, gamified savings challenges can lead to a win-win situation where customers enjoy a more engaging banking experience, and the bank benefits from increased customer satisfaction, loyalty, and growth. 🌟
 
 What do you think? Does this align with your vision?
+
+**Wireframe: Gamified Savings Challenges**
+
+**Screen 1: Savings Challenges Hub**
+
+* **Header:** "Savings Challenges"
+* **Prominent Banner:** Showcase a featured challenge (e.g., "Summer Vacation Fund") with an engaging image and a concise description.
+* **Challenge Categories:** 
+    * "Short-Term Goals" (e.g., "Weekend Getaway", "New Gadget")
+    * "Long-Term Goals" (e.g., "Down Payment", "Retirement")
+    * "Custom Challenges" (Users create their own)
+* **"View All Challenges" Button**
+
+**Screen 2: Challenge Details**
+
+* **Challenge Name & Description:** Clear and concise information.
+* **Goal Amount:** Display the target savings amount.
+* **Progress Bar:** Visually represent the user's progress towards the goal.
+* **Timeline:** Display the challenge duration (e.g., "30 days", "6 months").
+* **"Join Challenge" Button**
+* **"Learn More" Section:** Provide additional details and tips for success.
+
+**Screen 3: Active Challenges**
+
+* **List of Active Challenges:** Display all challenges the user is currently participating in.
+* **Progress Indicators:** Show progress bars for each challenge.
+* **Quick Actions:** 
+    * "View Details" 
+    * "Make a Deposit" (quick link to transfer funds)
+    * "Edit Challenge" (adjust goal, timeline)
+
+**Screen 4: Rewards & Achievements**
+
+* **"Badges & Rewards" Section:** Display earned badges (e.g., "Consistency Champion", "Goal Achiever").
+* **"Leaderboard" (Optional):** Show user's rank compared to friends or other participants.
+* **"Rewards Store" (Optional):** Offer exclusive discounts or rewards redeemable for points earned through challenges.
+
+**Screen 5: Create Custom Challenge**
+
+* **"Set Your Goal"** 
+    * Input field for goal amount.
+    * Dropdown menu for goal category (e.g., "Travel", "Home Improvement").
+    * Option to add a photo for inspiration.
+* **"Set Your Timeline"** 
+    * Calendar or date picker to select start and end dates.
+* **"Name Your Challenge"** 
+    * Input field for a personalized challenge name.
+* **"Save & Start" Button**
+
+**General Considerations:**
+
+* **Visual Appeal:** Use vibrant colors, engaging graphics, and an intuitive interface.
+* **User-Friendliness:** Keep the design simple and easy to navigate.
+* **Personalization:** Tailor challenges and rewards to individual user preferences and financial goals.
+* **Mobile-First Design:** Optimize the experience for both smartphones and tablets.
+
+**Note:** This is a basic wireframe. The actual design and features will depend on the specific goals and target audience of the app.
+
+I hope this wireframe provides a helpful starting point for your gamified savings challenge feature!
+
