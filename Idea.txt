@@ -1,5 +1,25 @@
 **Summary:**
 
+Jane*, IT Lead at a leading global airline group, faced the challenge of enhancing the security and user experience of the company's Venafi TPP application, a centralized certificate lifecycle management tool. 
+
+TCS, a key technology partner for the airline, assigned Anamika Anil, a cybersecurity expert with PKI expertise, to lead the project. 
+
+Anamika successfully integrated Venafi with Azure AD (Entra ID) to enable Single Sign-On (SSO) through SAML authentication. This improved security, streamlined user experience, and reduced administrative overhead.
+
+The client was highly impressed with the solution, recognizing Anamika's contributions and strengthening the TCS-client partnership.
+
+**Key Takeaways:**
+
+* **Challenge:** Enhance security and user experience of Venafi TPP by implementing SSO.
+* **Solution:** Integrated Venafi with Azure AD (Entra ID) to enable SAML-based SSO.
+* **Benefits:** Improved security, enhanced user experience, reduced administrative overhead, streamlined certificate lifecycle management.
+* **Key Player:** Anamika Anil, a cybersecurity expert at TCS, played a crucial role in developing and implementing the successful solution.
+
+This summary effectively captures the core issues, the innovative solution, and the positive outcomes achieved by the TCS team.
+-----------------------------------------
+
+**Summary:**
+
 A US-based healthcare provider experienced a production issue in their EKS environment caused by insufficient storage in a pod's EBS volume. This led to the need for proactive monitoring to prevent future disruptions.
 
 TCS, a long-term partner of the client, assigned Deepthi Mopidevi, an Associate Solutions Architect, to address this challenge. 
