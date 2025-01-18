@@ -1,3 +1,23 @@
+**Summary:**
+
+Jane, a QA expert at a leading Canadian bank, faced the challenge of significantly reducing the time and effort required for manual regression testing across multiple modules. 
+
+TCS, a long-standing partner of the bank, assigned a skilled QA expert with expertise in automated testing, to address this challenge.
+
+TCS developed a futuristic automated testing framework using a robotic framework and Selenium. This innovative solution dramatically reduced testing time and effort, resulting in significant cost savings and improved data quality. 
+
+The client was highly impressed with the results
+
+**Key Takeaways:**
+
+* **Challenge:** Time-consuming and resource-intensive manual regression testing.
+* **Solution:** Automated testing framework using a robotic framework and Selenium.
+* **Benefits:** Reduced testing time and effort, significant cost savings, improved data quality, increased efficiency.
+
+This summary effectively captures the core issues, the innovative solution, and the positive outcomes achieved by the TCS team.
+-------------------------------------------------
+
+
 GKE Guardian
 ------------
 
