@@ -1,5 +1,27 @@
 **Summary:**
 
+John, a Senior Associate at a leading Canadian bank, faced the challenge of a time-consuming and inefficient onboarding process for new team members working with the bank's Data Services Engine (DSE). 
+
+TCS, a long-standing partner of the bank, assigned Pooja Nehul, a Software Quality Assurance Analyst, to address this issue.
+
+Pooja developed a comprehensive and standardized document that streamlined the onboarding process for new team members. This document improved efficiency, reduced manual effort, and enhanced the overall onboarding experience. 
+
+The client was highly impressed with the results, recognizing Pooja's contributions and strengthening the TCS-client partnership.
+
+**Key Takeaways:**
+
+* **Challenge:** Time-consuming and inefficient onboarding process for new team members working with the DSE.
+* **Solution:** Creation of a comprehensive and standardized document for new team members.
+* **Benefits:** Reduced onboarding time, improved efficiency, minimized errors, enhanced onboarding experience.
+* **Key Player:** Pooja Nehul, a Software Quality Assurance Analyst at TCS, played a crucial role in developing and implementing the successful solution.
+
+This summary effectively captures the core issues, the innovative solution, and the positive outcomes achieved by the TCS team.
+
+
+-------------------------------
+
+**Summary:**
+
 Jane, a QA expert at a leading Canadian bank, faced the challenge of significantly reducing the time and effort required for manual regression testing across multiple modules. 
 
 TCS, a long-standing partner of the bank, assigned a skilled QA expert with expertise in automated testing, to address this challenge.
