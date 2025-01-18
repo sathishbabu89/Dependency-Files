@@ -1,5 +1,25 @@
 **Summary:**
 
+A US-based healthcare provider experienced a production issue in their EKS environment caused by insufficient storage in a pod's EBS volume. This led to the need for proactive monitoring to prevent future disruptions.
+
+TCS, a long-term partner of the client, assigned Deepthi Mopidevi, an Associate Solutions Architect, to address this challenge. 
+
+Deepthi developed a solution using CloudWatch Logs and metric filters to create an alert that proactively notifies the team when pod storage reaches its maximum capacity. 
+
+This solution significantly improved the client's operational efficiency, reduced outages, and increased customer satisfaction. 
+
+**Key Takeaways:**
+
+* **Challenge:** Proactive monitoring of EKS pod storage to prevent future disruptions.
+* **Solution:** CloudWatch Logs and metric filters to create an alert for exceeding storage thresholds.
+* **Benefits:** Reduced outages, improved operational efficiency, increased customer satisfaction, recognized by both client and TCS.
+* **Key Player:** Deepthi Mopidevi, an Associate Solutions Architect at TCS, played a crucial role in developing and implementing the successful solution.
+
+This summary effectively captures the core issues, the innovative solution, and the positive outcomes achieved by the TCS team.
+-------------------------------------------------------------------------
+
+**Summary:**
+
 John, a Senior Executive at a leading global bank, faced challenges with the performance of the bank's online banking portal, including slow speeds and an outdated performance measurement tool.
 
 TCS, a long-term partner of the bank, assigned Uma Thathireddy, a Performance Testing and Engineering Expert, to address these issues. 
