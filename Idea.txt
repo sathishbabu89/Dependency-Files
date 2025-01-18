@@ -1,3 +1,6 @@
+Automated data backup and clean up in GCP
+
+----------------------------------------------
 **Summary:**
 
 Jane*, IT Lead at a leading global airline group, faced the challenge of enhancing the security and user experience of the company's Venafi TPP application, a centralized certificate lifecycle management tool. 
