@@ -1,0 +1,78 @@
+Certainly! To build your own browser extension on top of the Requestly open-source repository, follow the steps below. I'll guide you through setting up and customizing the Requestly browser extension, focusing on the code inside the `browser-extension` directory.
+
+### Step 1: Clone the Repository
+1. First, clone the Requestly repository to your local machine:
+    ```bash
+    git clone https://github.com/requestly/requestly.git
+    ```
+2. Navigate to the `browser-extension` directory:
+    ```bash
+    cd requestly/browser-extension
+    ```
+
+### Step 2: Install Dependencies
+The Requestly extension uses `npm` (Node.js package manager) for managing dependencies.
+
+1. Install Node.js and npm if you don't already have them. You can download and install them from [Node.js official website](https://nodejs.org/).
+2. Run the following command to install the dependencies:
+    ```bash
+    npm install
+    ```
+
+### Step 3: Modify the Extension Code
+This is where you can start customizing the extension based on your needs. The `browser-extension` folder will contain several files and directories like:
+
+- `manifest.json`: The extension's manifest file where you define its permissions, background scripts, content scripts, and other settings.
+- `src/`: Contains the source code for the extension.
+- `icons/`: Folder for extension icon files.
+- `background.js`: Manages background tasks for the extension.
+- `popup/`: Contains the UI for the extension's popup interface.
+
+#### Customization Ideas:
+- **Manifest file** (`manifest.json`):
+  - You can modify the permissions, add additional APIs, or change the background script.
+  - Update the name, version, and description to reflect your customized extension.
+  
+- **UI Customization**:
+  - If you want to customize the extension’s popup, look inside the `popup/` folder. Modify HTML, CSS, and JavaScript as needed.
+  - The popup interface is typically controlled by a combination of `popup.html` and `popup.js`.
+
+- **Background Script**:
+  - Modify `background.js` for handling background tasks like listening to browser events, intercepting HTTP requests, and interacting with other APIs.
+
+- **Content Scripts**:
+  - If you want your extension to interact with web pages directly, use content scripts. Check for any predefined content scripts inside the `src/` folder, and modify or add new ones as needed.
+
+### Step 4: Test the Extension Locally
+1. Once you’ve made your changes, load the extension into your browser (this guide assumes you're using Chrome, but Firefox and other browsers follow a similar process).
+2. Open Chrome, navigate to `chrome://extensions/`, and enable **Developer Mode**.
+3. Click **Load unpacked**, then select the `browser-extension` directory from your local clone.
+4. Your extension will now appear in the browser. You can test it by interacting with the UI or triggering background scripts.
+
+### Step 5: Debugging and Refining
+- Use the **Console** in Chrome Developer Tools to debug your extension.
+- Check `background.js` logs to ensure your extension's background activities are working as expected.
+- Test all features to ensure there are no regressions, and your custom changes are functioning correctly.
+
+### Step 6: Packaging the Extension
+When you're ready to share or distribute your extension, you can package it.
+
+1. Go to `chrome://extensions/` in your browser.
+2. Enable **Developer Mode** if it's not already enabled.
+3. Click on **Pack extension** and select your extension directory.
+4. Chrome will generate a `.crx` file that you can distribute.
+
+### Step 7: Publishing (Optional)
+To distribute your extension on the Chrome Web Store:
+
+1. Create a developer account at [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/developer/dashboard).
+2. Follow the instructions to upload your `.zip` file (not `.crx`).
+3. Fill out any necessary details (e.g., description, screenshots).
+4. Submit it for review, and once approved, it will be available for users to install.
+
+---
+
+### Conclusion:
+By following the above steps, you should be able to build and customize your browser extension on top of the Requestly open-source repository. Modify the UI, scripts, and functionality to meet your needs. Don't forget to test your extension thoroughly before packaging or publishing it.
+
+Let me know if you need further help with any specific part of the extension development!
